@@ -55,8 +55,8 @@ export function createHTMLforForm(){
     )
   }
   );
+  createHTMLforPerson()
 }
-
 
 export function createHTMLforPerson(){
 
@@ -65,6 +65,7 @@ export function createHTMLforPerson(){
   const textTag2 = document.createElement("p");
   const textTag3 = document.createElement("p");
   const textTag4 = document.createElement("p");
+  let i = 0;
 
   textTag.innerHTML = "First name: " + family[i].firstName;
     textTag2.innerHTML = "Eye color: " +  family[i].eyecolor;

@@ -1,5 +1,4 @@
 import "./../scss/main.scss";
-import { Person } from "./Person";
 import { createHTMLforForm, createHTMLforPerson, family } from "./htmlHelpers";
 
 // export const { myForm, inputFirstName, inputEyeColor, inputLength, inputBirthYear, submitBtn, family } = variables();
