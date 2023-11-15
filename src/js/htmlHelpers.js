@@ -1,48 +1,45 @@
 import { Person } from "./Person";
 
-  const person1 = new Person("Patrik", "Blue", 185, 1988);
-  const person2 = new Person("Sara", "Blue", 167, 1990);
-  const person3 = new Person("Holger", "Blue", 110, 2019);
-  const person4 = new Person("Lova", "Blue", 90, 2021);
-  export const family = [person1, person2, person3, person4];
+const person1 = new Person("Patrik", "Blue", 185, 1988);
+const person2 = new Person("Sara", "Blue", 167, 1990);
+const person3 = new Person("Holger", "Blue", 110, 2019);
+const person4 = new Person("Lova", "Blue", 90, 2021);
+export const family = [person1, person2, person3, person4];
 
-  export function createHTMLforPerson(i){
-    const textSection = document.createElement("section");
-    const textTag = document.createElement("p");
-    const textTag2 = document.createElement("p");
-    const textTag3 = document.createElement("p");
-    const textTag4 = document.createElement("p");
+export function createHTMLforPerson(i) {
+  const textSection = document.createElement("section");
+  const textTag = document.createElement("p");
+  const textTag2 = document.createElement("p");
+  const textTag3 = document.createElement("p");
+  const textTag4 = document.createElement("p");
   // let i = 0;
-    
-  
-    textTag.innerHTML = "First name: " + family[i].firstName;
-      textTag2.innerHTML = "Eye color: " +  family[i].eyecolor;
-      textTag3.innerHTML = "Length: " + family[i].length + " cm";
-      textTag4.innerHTML = "Year of birth: " + family[i].birthyear;
-      textSection.appendChild(textTag);
-      textSection.appendChild(textTag2);
-      textSection.appendChild(textTag3);
-      textSection.appendChild(textTag4);
-      document.body.appendChild(textSection);
-    
-      textTag.addEventListener("click", () => {
-        textTag.classList.toggle("large");
-        textTag4.classList.toggle("rotate");
-      });
-      textTag2.addEventListener("click", () => {
-        textTag2.classList.toggle("large");
-      });
-      textTag3.addEventListener("click", () => {
-        textTag3.classList.toggle("rotate");
-      });
-      textTag4.addEventListener("click", () => {
-        textTag4.classList.toggle("rotate");
-      });
-    }
-      
-  
-export function createHTMLforForm(){
-  
+
+  textTag.innerHTML = "First name: " + family[i].firstName;
+  textTag2.innerHTML = "Eye color: " + family[i].eyecolor;
+  textTag3.innerHTML = "Length: " + family[i].length + " cm";
+  textTag4.innerHTML = "Year of birth: " + family[i].birthyear;
+  textSection.appendChild(textTag);
+  textSection.appendChild(textTag2);
+  textSection.appendChild(textTag3);
+  textSection.appendChild(textTag4);
+  document.body.appendChild(textSection);
+
+  textTag.addEventListener("click", () => {
+    textTag.classList.toggle("large");
+    textTag4.classList.toggle("rotate");
+  });
+  textTag2.addEventListener("click", () => {
+    textTag2.classList.toggle("large");
+  });
+  textTag3.addEventListener("click", () => {
+    textTag3.classList.toggle("rotate");
+  });
+  textTag4.addEventListener("click", () => {
+    textTag4.classList.toggle("rotate");
+  });
+}
+
+export function createHTMLforForm() {
   const myForm = document.createElement("form");
   const inputFirstName = document.createElement("input");
   const inputEyeColor = document.createElement("input");
@@ -56,9 +53,9 @@ export function createHTMLforForm(){
   let userInputBirthyear = null;
 
   inputFirstName.value = "";
-    inputEyeColor.value = "";
-    inputLength.value = "";
-    inputBirthYear.value = "";
+  inputEyeColor.value = "";
+  inputLength.value = "";
+  inputBirthYear.value = "";
 
   inputFirstName.setAttribute("placeholder", "First name");
   inputEyeColor.setAttribute("placeholder", "Eye color");
@@ -79,8 +76,8 @@ export function createHTMLforForm(){
     userInputEyeColor = inputEyeColor.value;
     userInputLength = parseInt(inputLength.value);
     userInputBirthyear = parseInt(inputBirthYear.value);
-    console.log("klick")
-  
+    console.log("klick");
+
     family.push(
       new Person(
         userInputName,
@@ -88,12 +85,7 @@ export function createHTMLforForm(){
         userInputLength,
         userInputBirthyear
       )
-    )
-    createHTMLforPerson(family.length - 1)
-  }
-  );
+    );
+    createHTMLforPerson(family.length - 1);
+  });
 }
-
-
-
-
