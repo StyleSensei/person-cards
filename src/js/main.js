@@ -5,17 +5,19 @@ import { createHTMLforForm, createHTMLforPerson, family } from "./htmlHelpers";
 createHTMLforForm()
 
 for (let i = 0; i < family.length; i++) {
-  createHTMLforPerson();
+  
+  createHTMLforPerson(i);
+
 }
 
 
 console.log(family);
 
 
-for (let i = family.length - 1; i < family.length; i++) {
-  createHTMLforPerson(family.length - 1);
+// for (let i = family.length - 1; i < family.length; i++) {
+//   createHTMLforPerson(family.length - 1);
   
-  }
+//   }
 
 console.log(family)
 
