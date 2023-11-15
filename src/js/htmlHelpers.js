@@ -1,23 +1,29 @@
 import { Person } from "./Person";
-import { family, myForm } from "./main";
 
-
-
-  
   const person1 = new Person("Patrik", "Blue", 185, 1988);
   const person2 = new Person("Sara", "Blue", 167, 1990);
   const person3 = new Person("Holger", "Blue", 110, 2019);
   const person4 = new Person("Lova", "Blue", 90, 2021);
-  const family = [person1, person2, person3, person4];
+  export const family = [person1, person2, person3, person4];
   
 export function createHTMLforForm(){
-
+  
   const myForm = document.createElement("form");
   const inputFirstName = document.createElement("input");
   const inputEyeColor = document.createElement("input");
   const inputLength = document.createElement("input");
   const inputBirthYear = document.createElement("input");
   const submitBtn = document.createElement("button");
+
+  let userInputName = "";
+  let userInputEyeColor = "";
+  let userInputLength = null;
+  let userInputBirthyear = null;
+
+  inputFirstName.value = "";
+    inputEyeColor.value = "";
+    inputLength.value = null;
+    inputBirthYear.value = null;
 
   inputFirstName.setAttribute("placeholder", "First name");
   inputEyeColor.setAttribute("placeholder", "Eye color");
@@ -31,10 +37,28 @@ export function createHTMLforForm(){
   myForm.appendChild(inputLength);
   myForm.appendChild(inputBirthYear);
   myForm.appendChild(submitBtn);
+
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    userInputName = inputFirstName.value;
+    userInputEyeColor = inputEyeColor.value;
+    userInputLength = parseInt(inputLength.value);
+    userInputBirthyear = parseInt(inputBirthYear.value);
+  
+    family.push(
+      new Person(
+        userInputName,
+        userInputEyeColor,
+        userInputLength,
+        userInputBirthyear
+      )
+    )
+  }
+  );
 }
 
 
-export function createHTMLforPerson() {
+export function createHTMLforPerson(){
 
   const textSection = document.createElement("section");
   const textTag = document.createElement("p");
