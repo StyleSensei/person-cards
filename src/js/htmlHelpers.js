@@ -57,8 +57,8 @@ export function createHTMLforForm(){
 
   inputFirstName.value = "";
     inputEyeColor.value = "";
-    inputLength.value = null;
-    inputBirthYear.value = null;
+    inputLength.value = "";
+    inputBirthYear.value = "";
 
   inputFirstName.setAttribute("placeholder", "First name");
   inputEyeColor.setAttribute("placeholder", "Eye color");
@@ -73,12 +73,13 @@ export function createHTMLforForm(){
   myForm.appendChild(inputBirthYear);
   myForm.appendChild(submitBtn);
 
-  submitBtn.addEventListener("click", (e, i) => {
+  submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     userInputName = inputFirstName.value;
     userInputEyeColor = inputEyeColor.value;
     userInputLength = parseInt(inputLength.value);
     userInputBirthyear = parseInt(inputBirthYear.value);
+    console.log("klick")
   
     family.push(
       new Person(
@@ -88,7 +89,7 @@ export function createHTMLforForm(){
         userInputBirthyear
       )
     )
-    createHTMLforPerson(i)
+    createHTMLforPerson(family.length - 1)
   }
   );
 }
