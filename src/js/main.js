@@ -1,16 +1,22 @@
 import "./../scss/main.scss";
 import { Person } from "./Person";
-import { createHTML } from "./htmlHelpers";
+import { createHTML, createHTMLforPerson } from "./htmlHelpers";
 import { variables } from "./htmlHelpers";
 
-export const { myForm, inputFirstName, inputEyeColor, inputLength, inputBirthYear, submitBtn, family } = variables();
+// export const { myForm, inputFirstName, inputEyeColor, inputLength, inputBirthYear, submitBtn, family } = variables();
 
 let userInputName = "";
 let userInputEyeColor = "";
 let userInputLength = null;
 let userInputBirthyear = null;
 
-createHTML(0, {inputFirstName,inputEyeColor,inputLength, inputBirthYear,submitBtn,family});
+
+
+for (let i = startingValue; i < family.length; i++) {
+  createHTMLforPerson(0);
+
+}
+
 
   submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -27,7 +33,7 @@ createHTML(0, {inputFirstName,inputEyeColor,inputLength, inputBirthYear,submitBt
         userInputBirthyear
       )
     );
-    createHTML(family.length - 1, {inputFirstName, inputEyeColor, inputLength, inputBirthYear, submitBtn, family});
+    createHTMLforPerson(family.length - 1);
 
     console.log(family);
     inputFirstName.value = "";
@@ -36,6 +42,10 @@ createHTML(0, {inputFirstName,inputEyeColor,inputLength, inputBirthYear,submitBt
     inputBirthYear.value = null;
   });
 
-  
+  for (let i = startingValue; i < family.length; i++) {
+ 
+
+  }
+
 console.log(family)
 
